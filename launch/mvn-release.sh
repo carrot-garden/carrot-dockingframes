@@ -1,10 +1,10 @@
 #!/bin/bash
 
-rm release.properties pom.xml.releaseBackup
-
 git commit --all --message "ready"
 
 mvn clean package --activate-profiles update-from-java-forge  --show-version --update-snapshots --define skipTests
+
+mvn release:clean   --batch-mode  --show-version --update-snapshots --define skipTests
 
 mvn release:prepare --batch-mode  --show-version --update-snapshots --define skipTests
 
