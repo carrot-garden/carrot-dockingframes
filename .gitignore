@@ -1,0 +1,15 @@
+.svn
+.project
+.classpath
+.settings/
+
+src/
+bin/
+target/
+logs/
+
+release.properties
+pom.xml.releaseBackup
+
+notes.properties
+config.xml
