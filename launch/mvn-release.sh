@@ -25,9 +25,9 @@ mvn release:perform --batch-mode  --show-version --update-snapshots --define ski
 
 mvn release:rollback --batch-mode  --show-version --update-snapshots --define skipTests
 
-git tag -d carrot-archon-1.0.20
-git push origin :refs/tags/carrot-archon-1.0.20
+git tag -d docking-frames-base-1.1.0
+git push origin :refs/tags/docking-frames-base-1.1.0
 
-git branch -d 1.0.20-SNAPSHOT
-git push origin :1.0.20-SNAPSHOT
+git branch -d 1.1.0-SNAPSHOT
+git push origin :1.1.0-SNAPSHOT
 
