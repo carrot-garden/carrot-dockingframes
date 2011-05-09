@@ -11,6 +11,8 @@ mvn release:prepare --batch-mode  --show-version --update-snapshots --define ski
 mvn release:perform --batch-mode  --show-version --update-snapshots --define skipTests
 
 
+
+
 ######################
 
 rm release.properties pom.xml.releaseBackup
