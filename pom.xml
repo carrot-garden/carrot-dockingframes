@@ -1,11 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
-		<version>5</version>
+		<version>7</version>
 	</parent>
 
 	<groupId>org.dockingframes</groupId>
@@ -200,11 +201,18 @@
 					<version>2.5</version>
 				</plugin>
 
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.1</version>
-				</plugin>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-release-plugin</artifactId>
+						<version>2.1</version>
+						<configuration>
+							<mavenExecutorId>forked-path</mavenExecutorId>
+							<useReleaseProfile>false</useReleaseProfile>
+							<arguments>-Psonatype-oss-release,update-from-java-forge</arguments>
+						</configuration>
+					</plugin>
+				</plugins>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
